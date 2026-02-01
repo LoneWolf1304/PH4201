@@ -1,0 +1,337 @@
+\documentclass[usenames, svgnames, dvipsnames]{scrartcl}
+\usepackage{pgfplots}
+\usepackage{emoji}
+\usepackage{siunitx}
+\usepackage{ gensymb }
+\usepackage[makeroom]{cancel}
+% \usepackage{chemformula}
+\usepackage[version=3]{mhchem}
+\usepackage{simpler-wick}
+\newcommand{\ech}{\mathbb{e}}
+\newcommand{\gcod}{\mathfrak{D}}
+\newcommand{\tz}{{t\tund{0}}}
+\newcommand{\php}[1]{\phi_{#1}^+}
+\newcommand{\phm}[1]{\phi_{#1}^-}
+\newcommand{\fp}{\triangle}
+\newcommand{\pho}{\phi_1}
+\newcommand{\phii}{\phi_2}
+\newcommand{\phiii}{\phi_3}
+\newcommand{\phiv}{\phi_4}
+\newcommand{\phv}{\phi_5}
+\newcommand{\phvi}{\phi_6}
+\newcommand{\ti}{{t\tund{1}}}
+\newcommand{\tii}{{t\tund{2}}}
+\newcommand{\tiii}{{t\tund{3}}}
+\newcommand{\tiv}{{t\tund{4}}}
+\newcommand{\tv}{{t\tund{5}}}
+\usepackage{mathbbol}
+\newcommand{\iqe}{iq\ech}
+\newcommand{\vph}{\varphi}
+\newcommand{\MH}{\mathrm{H}}
+\newcommand{\ut}{\uptau}
+\newcommand{\phint}{\phi\tund{I}}
+\usepackage{simpler-wick}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{booktabs} % For better table formatting
+\usepackage{calc}
+\usepackage{Style_File}
+\newcommand{\ad}[1]{a_{#1}^\dagger}
+\usepackage{fancyhdr}
+\newcommand{\pdx}{\vb{p}\cdot \vb{x}}
+\newcommand{\creap}{{\hat{a}_{\vb{p}}}^{s\dagger}}
+\newcommand{\annap}{{\hat{a}_{\vb{p}}}^{s}}
+\newcommand{\crebp}{{\hat{b}_{\vb{p}}}^{s\dagger}}
+\newcommand{\annbp}{{\hat{b}_{\vb{p}}}^{s}}
+
+
+\newcommand{\creapr}{{\hat{a}_{\vb{p}}}^{r\dagger}}
+\newcommand{\annapr}{{\hat{a}_{\vb{p}}}^{r}}
+\newcommand{\crebpr}{{\hat{b}_{\vb{p}}}^{r\dagger}}
+\newcommand{\annbpr}{{\hat{b}_{\vb{p}}}^{r}}
+\newcommand{\creampr}{{\hat{a}_{-\vb{p}}}^{r\dagger}}
+\newcommand{\annampr}{{\hat{a}_{-\vb{p}}}^{r}}
+\newcommand{\crebmpr}{{\hat{b}_{-\vb{p}}}^{r\dagger}}
+\newcommand{\annbmpr}{{\hat{b}_{-\vb{p}}}^{r}}
+\newcommand{\acomtr}[2]{\{#1,#2\}}
+\newcommand{\pdy}{\vb{p}\cdot \vb{y}}
+\newcommand{\qdy}{\vb{q}\cdot \vb{y}}
+
+\newcommand{\qdx}{\vb{q}\cdot \vb{x}}
+\newcommand{\creaq}{{\hat{a}_{\vb{q}}}^{s\dagger}}
+\newcommand{\annaq}{{\hat{a}_{\vb{q}}}^{s}}
+\newcommand{\crebq}{{\hat{b}_{\vb{q}}}^{s\dagger}}
+\newcommand{\annbq}{{\hat{b}_{\vb{q}}}^{s}}
+
+\newcommand{\creaqr}{{\hat{a}_{\vb{q}}}^{r\dagger}}
+\newcommand{\annaqr}{{\hat{a}_{\vb{q}}}^{r}}
+\newcommand{\crebqr}{{\hat{b}_{\vb{q}}}^{r\dagger}}
+\newcommand{\annbqr}{{\hat{b}_{\vb{q}}}^{r}}
+
+\newcommand{\creamqr}{{\hat{a}_{-\vb{q}}}^{r\dagger}}
+\newcommand{\annamqr}{{\hat{a}_{-\vb{q}}}^{r}}
+\newcommand{\crebmqr}{{\hat{b}_{-\vb{q}}}^{r\dagger}}
+\newcommand{\annbmqr}{{\hat{b}_{-\vb{q}}}^{r}}
+
+% \newcommand{\crebp}{def}
+\newenvironment{bMatrix}[1]{%
+\bmatrix\array{#1}\hspace*{-0.5\arraycolsep}}%
+{\endarray\endbmatrix}
+\newcommand{\tund}[1]{_{\text{\tiny #1}}}
+\newcommand{\tup}[1]{^{\text{\tiny #1}}}
+\newcommand{\uep}{\upepsilon}
+\newcommand{\sbo}[1]{\scalebox{0.56}{#1}}
+\newcommand{\gsl}[1]{\cancel{#1}}
+\usepackage{tensor}
+\usepackage{array}
+\usepackage{lmodern}
+\definecolor{violet}{rgb}{0.5,0.27,0.45}
+\newcommand{\hint}{\MH\tund{I}}
+\newcommand{\fvec}[1]{\vb{#1}}
+\newcommand{\cre}[1]{\hat{a}_{#1}^\dagger}
+\newcommand{\ann}[1]{\hat{a}_{#1}}
+
+\newcommand{\crep}{\hat{a}_{\vb{p}}^\dagger}
+\newcommand{\annp}{\hat{a}_{\vb{p}}}
+\newcommand{\fo}{\hat{\phi}}
+\newcommand{\crepd}{\hat{a}_{\vb{p}'}^\dagger}
+\newcommand{\annpd}{\hat{a}_{\vb{p}'}}
+\newcommand{\vac}{\ket{\Omega}}
+\newcommand{\kb}{k\tund{B}}
+\newcommand{\vacb}{\bra{\Omega}}
+\newcommand{\cremp}{\hat{a}_{\vb{-p}}^\dagger}
+\newcommand{\annmp}{\hat{a}_{\vb{-p}}}
+
+\newcommand{\crempd}{\hat{a}_{\vb{-p}'}^\dagger}
+\newcommand{\annmpd}{\hat{a}_{\vb{-p}'}}
+
+\newcommand{\tvec}[1]{\vb{{#1}}}
+\renewcommand{\aa}[1]{a_{#1}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu{#1}\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\dadj}[1]{\overbar{#1}}
+\newcommand{\bili}[1]{\dadj{\Psi}\ #1 \ \Psi}
+\newcommand{\bilin}[3]{\dadj{\Psi}_{#1}\ #3 \ \Psi_{#2}}
+\newcommand{\lrep}{\mathrm{S}[\Lambda]}
+\newcommand{\lrepd}{\mathrm{S}^\dagger[\Lambda]}
+\newcommand{\lrepinv}{\mathrm{S}^{-1}[\Lambda]}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+% Recommended preamble:
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{backgrounds}
+\usepgfplotslibrary{patchplots}
+\usepgfplotslibrary{fillbetween}
+\pgfplotsset{%
+    layers/standard/.define layer set={%
+        background,axis background,axis grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis foreground%
+    }{
+        grid style={/pgfplots/on layer=axis grid},%
+        tick style={/pgfplots/on layer=axis ticks},%
+        axis line style={/pgfplots/on layer=axis lines},%
+        label style={/pgfplots/on layer=axis descriptions},%
+        legend style={/pgfplots/on layer=axis descriptions},%
+        title style={/pgfplots/on layer=axis descriptions},%
+        colorbar style={/pgfplots/on layer=axis descriptions},%
+        ticklabel style={/pgfplots/on layer=axis tick labels},%
+        axis background@ style={/pgfplots/on layer=axis background},%
+        3d box foreground style={/pgfplots/on layer=axis foreground},%
+    },
+}
+\newcommand{\amstitle}[1]{%
+  {\Large\MakeUppercase{#1}}% First letter large, rest small caps (simplified)
+  % OR for true small caps:
+  % {\Large\MakeUppercase{\expandafter\@firstofone#1}\scshape\MakeLowercase{#1}}%
+}
+\usepackage[left = 0.8in,
+right = 0.6in,
+bottom = 0.8in,
+top = 0.8in,
+a4paper]{geometry}
+
+\lstdefinelanguage{Julia}{
+  morekeywords={
+    abstract, break, case, catch, const, continue, do, else, elseif,
+    end, export, false, for, function, global, if, import, in, let,
+    local, macro, module, mutable, new, quote, return, true, try,
+    type, using, while, where, struct
+  },
+  sensitive=true,
+  morecomment=[l]\#,
+  morestring=[b]",
+}
+\usepackage{listings}
+\lstset{
+  language=Julia,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{red},
+  breaklines=true,
+  breakatwhitespace=true,
+  showstringspaces=false,
+  frame=single,
+  columns=fullflexible,
+  captionpos=b
+}
+
+\fancyhead[L,C]{}
+\fancyhead[R]{Lab Report}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=cyan!80!black, citecolor=YellowOrange,urlcolor=cyan!80!black}
+\usepackage{doi}
+\fancyhead[L]{ PH4201}
+\fancyhead[C]{Adv. Optics Lab}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R,L]{}
+\usetikzlibrary{calc}
+\pagestyle{fancy}
+\newcommand{\delt}[2]{\tensor{\delta}{^{#1}_{#2}}}
+\newcommand{\vact}{\ket{\widetilde{\Omega}}}
+\newcommand{\vactb}{\bra{\widetilde{\Omega}}}
+\newcommand{\meas}[1]{\frac{\dd^3\tvec{#1}}{(2\pi)^3}}
+\newcommand{\tvp}{\tvec{p}}
+\newcommand{\tvpd}{\tvec{p}'}
+\newcommand{\ddelt}[1]{\delta^{(3)}(#1)}
+\newcommand{\myeq}[1]{\stackrel{\mathclap{\tiny\mbox{#1}}}{=}}
+\newcommand{\omp}{\omega_{\tvp}}
+\newcommand{\ompd}{\omega_{\tvpd}}
+\renewcommand{\headrulewidth}{0.4pt}
+\definecolor{titleblue}{RGB}{0, 80, 120}
+\usepackage{longtable} 
+
+\renewcommand{\fdv}[2]{\frac{\delta #1}{\delta #2}}
+\begin{document}
+        \begin{center}
+            {\rmfamily
+                \Large{\textcolor{blue!30!black}{%
+                    \textmd{{\Large{{O}}}}bserving \textmd{{\Large{{P}}}}ancharatnam-\textmd{{\Large{{B}}}}erry \textmd{{\Large{{P}}}}hase \textmd{{\Large{{U}}}}sing \textmd{{\Large{{I}}}}nterferometry  \\
+                     {\Large Experiment} 02%
+                }}\\[0.4cm]
+            }
+            \end{center}
+        \begin{center}
+           \large \texttt{{{\LARGE  S}agnik {\LARGE S}eth\hspace{0.3cm} 22MS026 \hspace{0.3cm} Group:B6}}
+        \end{center}
+\hrule
+\vspace{0.08cm}
+\hrule
+\vspace{0.6cm}
+\section{Aim}
+Using Michelson interferometer and simple optical elements viz. polarisers and waveplates to observe the manifestation of Pancharatnam-Berry phase through the shifting of fringe patterns. 
+\section{Apparatus}
+The required apparatus for performing the experiment are:
+\begin{multicols}{2}
+\begin{enumerate}
+  \item Laser source
+  \item Two Quarter-Wave Plates 
+  \item Two Mirrors
+  \item Linear Polariser 
+  \item 50:50 Beam Splitter 
+  \item Magnifier lens
+  \item Screen
+  \item Optical table
+\end{enumerate}
+\end{multicols}
+\section{Theory}
+The experiment is based on the measurement of a geometric phase which is independent of the optical path length and is solely based on the geometry of the evolution of the electromagnetic wave. We will discuss about \textit{Pancharatnam-Berry phase}, wherein the wave propagates in a fixed direction but undergoes a continuous change in the state of polarisation, which is represented by a closed loop in the Poincar\'e sphere.
+\begin{figure}[H]
+  \centering
+  \input{poincare.tex}
+  \caption{Poincar\'e sphere representation of polarisation states}
+  \label{poincare}
+\end{figure}
+\noindent
+The Poincar\'e sphere is a convenient representation of polarisation states of light where the Stokes vector for completely polarised light lie on the surface of the sphere and for partially polaised light lies in the interior. Change of polarisation can be depicted by rotation in the Poincar\'e sphere. The special points are shown in Fig. \ref{poincare}; the north and south pole represent the right and left circular polarised light. Along the $+x$ and $-x$ direction, we have horizontal and vertical linear polarisation. Along $+y$ and $-y$ we have the diagonal linear polarisation states.
+\begin{figure}[H]
+  \centering
+  \input{closed.tex}
+  \caption{The evolution of polarisation along the closed loop, whose area gives us the geometric phase.}
+  \label{loop}
+\end{figure}
+\noindent
+When a light beam's polarisation state is transformed along a closed loop as shown in Fig. \ref{loop} on the surface of the Poincar\'e sphere, it acquires a geometric phase shift $\Phi$, related to the solid angle $\Omega$ subtended by the loop at the centre of the sphere: 
+$$\Phi = -\frac{1}{2}\Omega$$
+\subsection{Experimental Setup}
+We measure this geometric phase through a modified Michelson interferometer setup as shown below.
+\begin{figure}[H]
+  \centering
+  \input{setup.tex}
+  \caption{Schematic diagram of the experimental setup}
+\end{figure}
+\noindent
+The laser source is passed through a polariser to obtain a pure linearly polarised light which passes through a beam-splitter, creating a coherent superposition. The ray in arm 1 goes and reflects back from mirror $\mathrm{M}\tund{1}$. The ray in arm 2 passes through two quarter waveplates.\\[0.2cm]
+On passing through $\mathrm{QP}\tund{1}$, the linearly polarised light becomes right circularly polarised (path $\mathrm{AB}$ in Fig. \ref{loop}). The second waveplate $\mathrm{QP}\tund{2}$ is rotated by an angle $\beta$ with the original polarization, which changes the right circularly polarised light backe to linear polarisation but introduces a phase (path $\mathrm{BC}$ in Fig. \ref{loop}). On reflecting from mirror $\mathrm{M}\tund{2}$, the evolution is similar but in an opposite sense (path $\mathrm{CD}$ and $\mathrm{DA}$ in Fig. \ref{loop}). Thus, a closed loop is traversed in the Poincar\'e sphere.\\[0.2cm]
+The ray comes back to the beam-splitter, with linear polarisation but with an additional phase. The two rays recombine and we obtain an interference pattern on the screen. \\[0.2cm]
+Throughout the experiment, we keep the mirrors fixed, hence the \textit{dynamical phase} is kept constant. Hence, the fringe patterns due to interference is solely controlled by the \textit{geometric phase}. Below, we show the mathematical calculation for the emergence of the geometric phase. 
+\subsection{Analysis using Jones matrices}
+The incident light from the laser, after passing through the polariser, can be denoted by the Jones vector 
+\begin{equation}
+  \vb{E}\tund{in} = \mqty(1\\0)
+\end{equation}
+This light will pass through the waveplates. The Jones matrix for a quarter waveplate with its axis at an angle $\theta$ is given as,
+\begin{equation}
+  \vb{J}\tund{Q}(\theta) =\mqty(\cos^2\theta + i\sin^2\theta & (1-i)\sin\theta\cos\theta\\  (1-i)\sin\theta\cos\theta & \sin^2\theta + i\cos^2\theta)
+\end{equation}
+Thus, on passing through $\mathrm{QP}\tund{1}$ the state becomes,
+\begin{equation}
+  \vb{E}\tund{1} = \vb{J}\tund{Q}(45\degree)  \mqty(1\\0) \equiv \frac{1}{\sqrt{2}}\mqty(1 & -i \\ -i & 1)\mqty(1\\ 0) =\frac{1}{\sqrt{2}} \mqty(1 \\ -i)
+\end{equation}
+On passing through $\mathrm{QP}\tund{2}$ the state becomes,
+\begin{equation}
+  \vb{E}\tund{2} = \vb{J}\tund{Q}(+\beta)\frac{1}{\sqrt{2}}\mqty(1 \\ -i) = e^{i\beta} \frac{1}{\sqrt{2}}\mqty(\cos\beta + \sin\beta\\ \cos\beta - \sin\beta)
+\end{equation}
+Now, on reflecting from the mirror $\mathrm{M}\tund{2}$ the state becomes, 
+\begin{equation}
+  \vb{E}\tund{3} =e^{i\beta} \mqty(1& 0 \\ 0& -1)\frac{1}{\sqrt{2}}\mqty(\cos\beta + \sin\beta\\ \cos\beta - \sin\beta) = e^{i\beta}\frac{1}{\sqrt{2}}\mqty(\cos\beta + \sin\beta\\  \sin\beta-\cos\beta)
+\end{equation}
+Again, after passing through $\mathrm{QP}\tund{2}$ we get,
+\begin{equation}
+   \vb{E}\tund{4} = \vb{J}\tund{Q}(-\beta)e^{i\beta}\frac{1}{\sqrt{2}}\mqty(\cos\beta + \sin\beta\\  \sin\beta-\cos\beta) = e^{2i\beta}\frac{1}{\sqrt{2}}\mqty(1 \\ -i)
+\end{equation}
+Finally, on passing through $\mathrm{QP}\tund{1}$ we have,
+\begin{equation}
+  \vb{E}\tund{5} = \vb{J}\tund{Q} (-45\degree)e^{2i\beta}\frac{1}{\sqrt{2}}\mqty(1 \\ -i) =e^{2i\beta} \frac{1}{2}\mqty(1 & i \\ i & 1)\mqty(1\\ -i) = e^{2i\beta}\mqty(1\\ 0)
+\end{equation}
+We see that we obtain the initial polarisation state but with an additional phase of $e^{2i\beta}$, $$\vb{E}\tund{out} = e^{-2i\beta}\vb{E}\tund{in}$$
+\section{Data and Calculations}
+After alignment of the Michelson interferometer, we varied the angle $\beta$ of the second quarter waveplate and cumulatively counted the number of fringe shift occuring with the varying angle. The data is presented in the table below: 
+\begin{table}[H]
+\centering
+\caption{Measured Phase Shift vs. Rotation Angle $\beta$}
+\label{tab:phase_shift}
+\begin{tabular}{cccc}
+\toprule
+Angle $\beta$ ($\degree$) & Angle $\beta$ (rad) & Fringe Shift ($n$) & Phase $\Delta\Phi = 2\pi n$ (rad) \\
+\midrule
+168  & 2.93  & 1  & 6.28  \\
+248  & 4.33  & 2  & 12.57 \\
+520  & 9.08  & 3  & 18.85 \\
+740  & 12.92 & 4  & 25.13 \\
+898  & 15.67 & 5  & 31.42 \\
+1074 & 18.74 & 6  & 37.70 \\
+1312 & 22.90 & 7  & 43.98 \\
+1492 & 26.04 & 8  & 50.27 \\
+1612 & 28.13 & 9  & 56.55 \\
+1906 & 33.27 & 10 & 62.83 \\
+1986 & 34.66 & 11 & 69.12 \\
+2180 & 38.05 & 12 & 75.40 \\
+2360 & 41.19 & 13 & 81.68 \\
+2489 & 43.44 & 14 & 87.96 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\noindent
+The plot between the rotation angle $\beta$ and the phase shift of the fringe pattern $\Delta \Phi = 2\pi n$ is shown below. 
+\begin{figure}[H]
+  \centering 
+  \includegraphics[scale=0.97]{../beta_vs_fringe.pdf}
+\end{figure}
+\noindent
+From the linear fit of the data points, we obtained a slope of $m= 1.945 \pm 0.033$ which is close to the theoretically expected value of $m\tund{th}=2.0$ (since the geometric phase is $2\beta$, $\Delta \Phi = 2\beta$)
+\section{Error Analysis}
+The percentage error from the theoretical value is, 
+$$\boxed{\mathrm{Error}. (\%) = \frac{(2-1.945)}{2}\times 100\% = 2.75\%}$$
+We also calculate the propagation of error. 
+\section{Discussion and Conclusion}
+\end{document}
+
+
