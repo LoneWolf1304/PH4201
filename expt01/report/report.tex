@@ -232,7 +232,9 @@ The required apparatus for performing the experiment are:
 \end{enumerate}
 \end{multicols}
 \section{Theory}
-The experiment is based on the measurement of a geometric phase which is independent of the optical path length and is solely based on the geometry of the evolution of the electromagnetic wave. We will discuss about \textit{Pancharatnam-Berry phase}, wherein the wave propagates in a fixed direction but undergoes a continuous change in the state of polarisation, which is represented by a closed loop in the Poincar\'e sphere.
+The experiment is based on the measurement of a geometric phase which is independent of the optical path length and is solely based on the geometry of the evolution of the electromagnetic wave. This is different from the dynamical phase $\theta\tund{d}$ due to the path length $z$ travelled by the light,
+$$\theta\tund{d} = \frac{2\pi}{\lambda}\times z$$
+We will discuss about \textit{Pancharatnam-Berry phase}, wherein the wave propagates in a fixed direction but undergoes a continuous change in the state of polarisation, which is represented by a closed loop in the Poincar\'e sphere.
 \begin{figure}[H]
   \centering
   \input{poincare.tex}
@@ -302,7 +304,7 @@ After alignment of the Michelson interferometer, we varied the angle $\beta$ of 
 \toprule
 Angle $\beta$ ($\degree$) & Angle $\beta$ (rad) & Fringe Shift ($n$) & Phase $\Delta\Phi = 2\pi n$ (rad) \\
 \midrule
-168  & 2.93  & 1  & 6.28  \\
+168  & 2.93  & 1  & 06.28  \\
 248  & 4.33  & 2  & 12.57 \\
 520  & 9.08  & 3  & 18.85 \\
 740  & 12.92 & 4  & 25.13 \\
@@ -331,7 +333,17 @@ From the linear fit of the data points, we obtained a slope of $m= 1.945 \pm 0.0
 The percentage error from the theoretical value is, 
 $$\boxed{\mathrm{Error}. (\%) = \frac{(2-1.945)}{2}\times 100\% = 2.75\%}$$
 We also calculate the propagation of error. 
+\subsection{Sources of Error}
+\begin{itemize}
+\item The fringes were perturbed by minor vibrations, which made it difficult to record the shift. 
+\item Imperfect alignment of the optical components led to reduced fringe visibility and distorted fringe patterns, which occasionally made it difficult to identify fringe shifts accurately.
+\item Impurities in the optical elements produced an undesirable shadow on the screen on top of the fringes which hindered the recording of the fringes. 
+\end{itemize}
 \section{Discussion and Conclusion}
+In this experiment, we observed the Pancharatnam phase through the interference pattern using a Michelson interferometer, through the use of waveplates.\\[0.2cm]
+We observed a clear shift in the interference fringes as the second quarter-wave plate was rotated. By plotting the accumulated phase shift against the rotation angle $\beta$, we obtained an approximately linear relation with a slope $ 1.945\pm 0.033$ close to the theoretical value of $2$. This confirms that the observed phase is mainly geometric in nature and depends only on the change in polarization, not on the optical path length, since we kept the optical path length fixed during the experiment.\\[0.2cm]
+As a further study, additional optical elements can be introduced to modify the polarization evolution, and the resulting fringe shifts can be compared with theoretical predictions obtained using Jones matrix calculations.\\[0.2cm]
+The geometric phase provides a robust means of controlling phase, as it is largely insensitive to fluctuations in optical path length, making it useful for various optical applications. Through this experiment, we demonstrated an important and fundamental aspect of light arising purely from its polarisation evolution.
 \end{document}
 
 
