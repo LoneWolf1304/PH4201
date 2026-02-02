@@ -242,7 +242,7 @@ We will discuss about \textit{Pancharatnam-Berry phase}, wherein the wave propag
   \label{poincare}
 \end{figure}
 \noindent
-The Poincar\'e sphere is a convenient representation of polarisation states of light where the Stokes vector for completely polarised light lie on the surface of the sphere and for partially polaised light lies in the interior. Change of polarisation can be depicted by rotation in the Poincar\'e sphere. The special points are shown in Fig. \ref{poincare}; the north and south pole represent the right and left circular polarised light. Along the $+x$ and $-x$ direction, we have horizontal and vertical linear polarisation. Along $+y$ and $-y$ we have the diagonal linear polarisation states.
+The Poincar\'e sphere is a convenient representation of polarisation states of light where the Stokes vector for completely polarised light lie on the surface of the sphere and for partially polarised light lies in the interior. Change of polarisation can be depicted by rotation in the Poincar\'e sphere. The special points are shown in Fig. \ref{poincare}; the north and south pole represent the right and left circular polarised light. Along the $+x$ and $-x$ direction, we have horizontal and vertical linear polarisation. Along $+y$ and $-y$ we have the diagonal linear polarisation states.
 \begin{figure}[H]
   \centering
   \input{closed.tex}
@@ -261,9 +261,14 @@ We measure this geometric phase through a modified Michelson interferometer setu
 \end{figure}
 \noindent
 The laser source is passed through a polariser to obtain a pure linearly polarised light which passes through a beam-splitter, creating a coherent superposition. The ray in arm 1 goes and reflects back from mirror $\mathrm{M}\tund{1}$. The ray in arm 2 passes through two quarter waveplates.\\[0.2cm]
-On passing through $\mathrm{QP}\tund{1}$, the linearly polarised light becomes right circularly polarised (path $\mathrm{AB}$ in Fig. \ref{loop}). The second waveplate $\mathrm{QP}\tund{2}$ is rotated by an angle $\beta$ with the original polarization, which changes the right circularly polarised light backe to linear polarisation but introduces a phase (path $\mathrm{BC}$ in Fig. \ref{loop}). On reflecting from mirror $\mathrm{M}\tund{2}$, the evolution is similar but in an opposite sense (path $\mathrm{CD}$ and $\mathrm{DA}$ in Fig. \ref{loop}). Thus, a closed loop is traversed in the Poincar\'e sphere.\\[0.2cm]
+On passing through $\mathrm{QP}\tund{1}$, the linearly polarised light becomes right circularly polarised (path $\mathrm{AB}$ in Fig. \ref{loop}). The second waveplate $\mathrm{QP}\tund{2}$ is rotated by an angle $\beta$ with the original polarization, which changes the right circularly polarised light back to linear polarisation but introduces a phase (path $\mathrm{BC}$ in Fig. \ref{loop}). On reflecting from mirror $\mathrm{M}\tund{2}$, the evolution is similar but in an opposite sense (path $\mathrm{CD}$ and $\mathrm{DA}$ in Fig. \ref{loop}). Thus, a closed loop is traversed in the Poincar\'e sphere.\\[0.2cm]
 The ray comes back to the beam-splitter, with linear polarisation but with an additional phase. The two rays recombine and we obtain an interference pattern on the screen. \\[0.2cm]
 Throughout the experiment, we keep the mirrors fixed, hence the \textit{dynamical phase} is kept constant. Hence, the fringe patterns due to interference is solely controlled by the \textit{geometric phase}. Below, we show the mathematical calculation for the emergence of the geometric phase. 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.2]{lab_setup.jpeg}
+  \caption{Actual experimental setup in the lab}
+\end{figure}
 \subsection{Analysis using Jones matrices}
 The incident light from the laser, after passing through the polariser, can be denoted by the Jones vector 
 \begin{equation}
@@ -328,11 +333,20 @@ The plot between the rotation angle $\beta$ and the phase shift of the fringe pa
   \includegraphics[scale=0.97]{../beta_vs_fringe.pdf}
 \end{figure}
 \noindent
-From the linear fit of the data points, we obtained a slope of $m= 1.945 \pm 0.033$ which is close to the theoretically expected value of $m\tund{th}=2.0$ (since the geometric phase is $2\beta$, $\Delta \Phi = 2\beta$)
+From the linear fit of the data points, we obtained a slope of $m= 1.945$ with a fitting error of $\pm 0.033$, which is close to the theoretically expected value of $m\tund{th}=2.0$ (since the geometric phase is $2\beta$, $\Delta \Phi = 2\beta$)
 \section{Error Analysis}
 The percentage error from the theoretical value is, 
 $$\boxed{\mathrm{Error}. (\%) = \frac{(2-1.945)}{2}\times 100\% = 2.75\%}$$
-We also calculate the propagation of error. 
+\subsection{Propagation of Error}
+The measured angle had a least count $\delta\beta = 2\degree = \frac{2\pi}{180}\ \mathrm{rad} \approx 0.035\ \mathrm{rad}$. The measured phase shift is given by $\Delta \Phi = 2\pi n $ which implies $\delta(\Delta \Phi) = 2\pi \delta n$. Since the fringes were shifted by 1, $\delta n = 1$ and hence $\delta(\Delta \Phi) = 2\pi \approx 6.283\ \mathrm{rad}$. The Berry phase is given by the formula $\Delta\Phi = m\beta $ where $m$ should ideally be 2. We take from our table, the largest data set $\Delta\phi =87.96$ and $\beta =43.44$, for which the uncertainty in $q$ is given by,
+\begin{align*}
+  \begin{split}
+    \qty(\frac{\delta m}{m}) &= \sqrt{\qty(\frac{\delta(\Delta\Phi)}{\Delta\Phi})^2+\qty(\frac{\delta \beta}{\beta})^2}\\
+    &=\sqrt{\qty(\frac{6.283}{87.965})^2+\qty(\frac{0.035}{43.44})^2}\approx 0.0714
+  \end{split}
+\end{align*}
+This implies that $\delta m = 1.945 \times 0.0714 = 0.139$. Thus, the slope obtained from our experiment is, 
+$$\boxed{m = 1.945\pm 0.139}$$
 \subsection{Sources of Error}
 \begin{itemize}
 \item The fringes were perturbed by minor vibrations, which made it difficult to record the shift. 
