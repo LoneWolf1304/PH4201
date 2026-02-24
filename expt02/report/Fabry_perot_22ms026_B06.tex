@@ -203,7 +203,7 @@ a4paper]{geometry}
         \begin{center}
             {\rmfamily
                 \Large{\textcolor{blue!30!black}{%
-                    \textmd{{\Large{{F}}}}abry-\textmd{{\Large{{P}}}}erot \textmd{{\Large{{I}}}}nterferometry  \\
+                    \textmd{{\Large{{F}}}}abry-\textmd{{\Large{{P}}}}\'erot \textmd{{\Large{{I}}}}nterferometry  \\
                      {\Large Experiment} 03%
                 }}\\[0.4cm]
             }
@@ -216,7 +216,11 @@ a4paper]{geometry}
 \hrule
 \vspace{0.6cm}
 \section{Aim}
-Using Fabry-Perot interferometer and simple optical elements viz. polarisers and waveplates to observe the manifestation of Pancharatnam-Berry phase through the shifting of fringe patterns. 
+\begin{itemize}
+  \item To measure the distance between the plates of a Fabry-P\'erot etalon
+  \item To measure wavelength of unknown laser source using the distance between plates
+  \item To estimate the finesse of a fringe pattern.
+\end{itemize}
 \section{Apparatus}
 The required apparatus for performing the experiment are:
 \begin{multicols}{2}
@@ -230,12 +234,21 @@ The required apparatus for performing the experiment are:
 \end{enumerate}
 \end{multicols}
 \section{Theory}
+The experiment is based on the phenomenon of multi-beam  from a parallel glass slab. 
+\begin{figure}[H]
+  \centering 
+  \input{multibeam.tex}
+  \caption{Multibeam Interference from a parallel slab}
+\end{figure}
 \begin{figure}[H]
   \centering 
   \input{fb_diag.tex}
   \caption{Schematic diagram of the Fabry-Perot experimental set-up}
 \end{figure}
 \section{Data and Calculations}
+\subsection{Distance between Plates}
+\subsection{Wavelength of Unknown Laser}
+\subsection{Finesse Calculation}
 \section{Error Analysis}
 \section{Discussion and Conclusion}
 \end{document}
