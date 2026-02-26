@@ -37,7 +37,7 @@ The reflected flux density at $P$ can be defined as,
 \begin{align}
     \mathcal{I}\tund{r}^{\text{\tiny P}} = \frac{1}{2}\widetilde{E}\tund{r}\widetilde{E}\tund{r}^* = \frac{1}{2}E\tund{0}^2\frac{2r^2(1-\cos\delta)}{(1+r^4-2r^2\cos\delta)} =  \frac{\mathcal{F}\sin^2\qty(\delta/2)}{1+\mathcal{F}\sin^2\qty(\delta/2)}\mathcal{I}_i
 \end{align}
-where $\mathcal{I}_i$ is the incident flux and $\mathcal{F}=\qty(\frac{2r}{1-r^2})^2$ is defined as the \textit{finesse}. Similarly for transmitted waves we have, 
+where $\mathcal{I}_i$ is the incident flux and $\mathcal{F}=\qty(\frac{2r}{1-r^2})^2$ is defined as the \textit{coefficient of finesse}. Similarly for transmitted waves we have, 
 \begin{align}
     \widetilde{E}\tund{t} = E\tund{0}e^{i\omega t}\frac{tt'}{1-r^2e^{-i\delta}} \implies  \mathcal{I}\tund{t}^{\text{\tiny P}} = \frac{1}{1+\mathcal{F}\sin^2(\delta/2)}\mathcal{I}_i
 \end{align}
@@ -46,9 +46,52 @@ From this we can observe that $\mathcal{I}\tund{i} = \mathcal{I}\tund{r}+\mathca
     \mathcal{I}\tund{t}^{\text{\tiny max}} = \mathcal{I}\tund{i} \qquad \qquad \mathcal{I}\tund{t}^{\text{\tiny min}} =\qty(\frac{1-r^2}{1+r^2})^2 \mathcal{I}\tund{i}
 \end{align}
 \subsection{Fabry-P\'erot Interferometer}
-Having seen the basics of multi-beam interference, we introduce the principle behaind our experimental setup.
+Having seen the basics of multi-beam interference, we introduce the principle behaind our experimental setup. The Fabry-P\'erot setup constitutes two plane parallel reflecting surfaces within which light rays are multiply reflected and then the transmitted rays are focussed on a screen where they interfere. If we keep the distance between the surfaces fixed, the setup is called an \textit{etalon}. 
 \begin{figure}[H]
   \centering 
   \input{fb_diag.tex}
   \caption{Schematic diagram of the Fabry-Perot experimental set-up}
 \end{figure}
+\noindent 
+Sometimes transparent metal films are used to increase the reflectance $R=r^2$ but introducing this also incurs an absorptance $A$. Along with the transmittance $T$, the conservation equation becomes 
+\begin{align}
+    R+T+A=1
+\end{align}
+Another complication due to the metallic film is the introduction of an additional phase $\phi$ which depends on $\theta\tund{i}$ (the angle of the incident rays). The phase difference between the two successively transmitted rays is,
+\begin{equation}
+    \delta = \frac{4\pi n}{\lambda\tund{0}} d\cos\theta\tund{t}+2\phi
+\end{equation}
+where $n$ is the refractive index of the plates, $\lambda\tund{0}$ is the wavelength of the light source and $\theta\tund{t}$ is the angle of the transmitted ray. Considering small $d$ and large $\lambda\tund{0}$, we can safely neglect $\phi$. From this, the transmission ratio is given as, 
+\begin{align}
+   \begin{split}
+     \frac{\mathcal{I}\tund{t}}{\mathcal{I}\tund{i}} = \qty(\frac{T}{1-R})^2 \times \qty({1+\frac{4R}{(1-R)^2}\sin^2\qty(\delta/2)})^{-1} &=\qty( \frac{1-R-A}{1-R})^2 \frac{1}{1+\mathcal{F}\sin^2\qty(\delta/2)}\\ &= \qty[1-\frac{A}{1-R}]\qty({1+\mathcal{F}\sin^2\qty(\delta/2)})^{-1}
+   \end{split}
+\end{align}
+\subsection{Sharpness and Finess}
+To analyse the sharpness of the peak, we find the half-width $\gamma$, which tells us the characteristic width of the peak. We obtain it by solving for $\delta$ where $\mathcal{I}\tund{t} = \frac{1}{2}(\mathcal{I}\tund{t})\tund{max}$ from which we obtain the condition, 
+\begin{equation}
+    \begin{split}
+        \frac{1}{1+\mathcal{F}\sin^2\qty(\delta/2)} = \frac{1}{2}\implies \sin\qty(\frac{\delta\tund{1/2}}{2}) = \frac{1}{\sqrt{\mathcal{F}}}
+    \end{split}
+\end{equation}
+For large $\mathcal{F}$, the sin term is very small and hence can be approximated as simply $\frac{\delta\tund{1/2}}{2}$ which gives us $\gamma \equiv 2\delta\tund{1/2} = \frac{4}{\sqrt{\mathcal{F}}}$. The ratio of separation of adjacent maxima divided by the half-width is defined as the finesse, $\mathscr{F}$. The difference between maximas is $2\pi (m+1) - 2\pi m = 2\pi$ and hence, 
+\begin{equation}
+    \mathscr{F} = \frac{2\pi}{\gamma} = \frac{\pi\sqrt{\mathcal{F}}}{2}
+\end{equation}
+\section{Working Formula}
+The intensity of transmitted light will follow the relation, 
+\begin{equation}
+    \mathcal{T} = \frac{\uptau\tund{0}}{1+\mathcal{F}\sin^2\qty(2\pi L/\lambda)}
+\end{equation}
+where $\uptau\tund{0}$ is the maximum possible intensity and $L$ is the `optical spacing' between the mirrors that depend on the refractive index, transmittance angle and the spacing $d$ between the mirrors. 
+\begin{equation}
+    L = 2\pi n d \cos\theta\tund{t}
+\end{equation}
+The finesse  $\mathscr{F}$ and the contrast $\mathcal{C}$ are defined as,
+\begin{equation}
+     \mathscr{F}=\frac{\pi\sqrt{\mathcal{F}}}{2} = \frac{\pi r}{1-r^2}\qquad \mathcal{C} = \mathscr{F}+1
+\end{equation}
+For circular fringes, the fringe radius $\chi\tund{m}$ is related to the $m$-th ring using, 
+\begin{equation}
+    m = \frac{d}{D^2}\chi\tund{m}^2
+\end{equation}
