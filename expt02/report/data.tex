@@ -1,19 +1,67 @@
 \section{Data and Calculations}
 We perform three parts in the experiment. In the first part, we obtain the distance between the two mirrors of the etalon using a known laser source. In the second part, we use this distance between the mirrors to find the wavelength of an unknown laser source. In the third part, we obtain the finesse of the fringes formed due to interference.
 \subsection{Distance between Plates}
-We set up the apparatus and obtained the interference fringes from the rays on a screen. We measured the outer radius of the fringes formed and then plotted it against the order of the fringe.
+We set up the apparatus and obtained the interference fringes from the rays on a screen. We measured the outer radius of the fringes formed and then plotted it against the order of the fringe. For our setup, the distance between the etalon and the screen was $D= 66.2cm$ and a red laser source was used, with $\lambda=655 \ \text{nm}$
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccccc}
+\hline
+$n$ & Left Position (cm) & Right Position (cm) & Radius $R$ (cm) & $R^2$ (cm$^2$) \\ 
+\hline\hline
+1 & 2.46 & 11.00 & 4.27 & 18.23 \\
+2 & 2.73 & 10.77 & 4.02 & 16.16 \\
+3 & 3.02 & 10.51 & 3.75 & 14.03 \\
+4 & 3.30 & 10.20 & 3.45 & 11.90 \\
+5 & 3.63 & 9.95  & 3.16 & 9.99  \\
+6 & 3.93 & 9.58  & 2.83 & 7.98  \\
+7 & 4.36 & 9.24  & 2.44 & 5.95  \\
+8 & 4.84 & 8.71  & 1.94 & 3.74  \\
+9 & 5.41 & 8.15  & 1.37 & 1.88  \\
+\hline
+\end{tabular}
+\caption{Radius of fringe for distance determination}
+\end{table}
+
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{../distance}
 \end{figure}
 \noindent
-We performed a linear fit of this data with $y=mx+c$ and obtained the slope and intercept respectively as,
-$$m= 2.045\pm 0.011 \qquad c= -0.243\pm 0.059$$ 
+We performed a linear fit of this data with $y=mx$ and obtained the slope as,
+$$m= 2.007\pm 0.008$$ 
+Using Eq. \eqref{radius}, we can find the distance between the plates as, 
+$$d = \frac{D^2\lambda}{\text{slope}} =\frac{(66.2\ \text{cm})^2\times 655\times 10^{-7}\ \text{cm}}{2.007\ \text{cm}^2} = 0.143\ \text{cm} $$
 \subsection{Wavelength of Unknown Laser}
+In this part, we used a green laser source of undetermined wavelength. Similar as before, we calculated the radius of the fringe and plotted it with the fringe order.
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccccc}
+\hline
+$n$ & Right Position (cm) & Left Position (cm) & Radius $R$ (cm) & $R^2$ (cm$^2$) \\
+\hline\hline
+1 & 7.97 & 5.64 & 1.17 & 1.36 \\
+2 & 8.58 & 5.06 & 1.76 & 3.10 \\
+3 & 8.99 & 4.60 & 2.20 & 4.82 \\
+4 & 9.36 & 4.28 & 2.54 & 6.45 \\
+5 & 9.65 & 3.97 & 2.84 & 8.07 \\
+6 & 9.90 & 3.67 & 3.12 & 9.70 \\
+7 & 10.17 & 3.41 & 3.38 & 11.42 \\
+8 & 10.41 & 3.15 & 3.63 & 13.18 \\
+9 & 10.58 & 2.96 & 3.81 & 14.52 \\
+\hline
+\end{tabular}
+\caption{Radius of fringe for wavelength determination}
+
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{../wavelength}
 \end{figure}
-We performed a linear fit of this data with $y=mx+c$ and obtained the slope and intercept respectively as,
-$$m= 1.656\pm 0.012 \qquad c= -0.210\pm 0.07$$ 
+We performed a linear fit of this data with $y=mx$ and obtained the slope as,
+$$m= 1.622\pm 0.008$$ 
+Using the distance $d$ previously obtained, we can estimate the wavelength of the laser source as,
+$$\lambda = \frac{\text{slope}\times d}{D^2} = \frac{1.622\ \text{cm}^2\times 0.143 \ \text{cm}}{(66.2\ \text{cm})^2} =5.293\times 10^{-5}\ \text{cm} = 529.3 \ \text{nm} $$
 \subsection{Finesse Calculation}
