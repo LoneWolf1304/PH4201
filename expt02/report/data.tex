@@ -65,3 +65,38 @@ $$m= 1.622\pm 0.008$$
 Using the distance $d$ previously obtained, we can estimate the wavelength of the laser source as,
 $$\lambda = \frac{\text{slope}\times d}{D^2} = \frac{1.622\ \text{cm}^2\times 0.143 \ \text{cm}}{(66.2\ \text{cm})^2} =5.293\times 10^{-5}\ \text{cm} = 529.3 \ \text{nm} $$
 \subsection{Finesse Calculation}
+For the finesse calculation, we need to analyse the fringes using the \textit{ImageJ} software. One such picture of the fringes was taken using our phone camera and then using ImageJ, we found the distribution profule of the pixel. 
+\begin{figure}[H]
+    \centering
+    
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=0.66\linewidth]{../image2}
+        \caption{Actual image used for finesse analysis}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../imagej}
+        \caption{Image analysis using ImageJ software}
+    \end{subfigure}
+    
+    \caption{Comparison of the two images}
+\end{figure}
+\noindent
+The distribution of the pixel is shown below. Through calibration, we set the pixel scale to the actual distance scale by measuring the distance between which the fringes extended ($5.54\ \text{cm}$) and setting that scale in the ImageJ software, equating with the range of the pixels. The final plot is shown below.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.66]{../finness_fitting}
+    \caption{Fitting of the intensity profile}
+    \label{fitting}
+\end{figure}
+\noindent
+In the distribution data, we used a fitting function,
+\begin{equation}
+    y = \frac{\uptau\tund{0}}{1+\mathcal{F} \qty[\sin\qty(\frac{x-a}{l})]^2} + A\exp\qty[-\frac{(x-\mu)^2}{2\sigma^2}] + c
+\end{equation}
+The first part is the expected distribution for the intensity of transmitted light from Eq. \eqref{trans}. The second part takes care of the Gaussian background of the intensity and $c$ is just to manage some offset.\\[0.2cm]
+The fitting is very sensitive to initial conditions and care needs to be taken so that the initial conditions roughly follow a trend with the original data. The data along with the fit curve is shown in Fig. \ref{fitting}.\\[0.2cm]
+After curve fitting, the coefficient of finesse was found out to be, $\mathcal{F} = 0.169$ from which we obtain the finesse as,
+$$\mathscr{F} = \frac{\pi \sqrt{\mathcal{F}}}{2}= 0.645$$
