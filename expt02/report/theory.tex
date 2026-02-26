@@ -1,0 +1,54 @@
+\section{Theory}
+The experiment is based on the phenomenon of multi-beam  from a parallel glass slab. Consider a beam of light falling on a glass slab with refractive index $n$. This beam will undergo multiple refractions and internal reflections inside the slab, as shown below.
+
+The higher order reflections become important if the reflection coefficient $r$ is not very small. $t$ denotes the fraction of amplitude transmitted on entering the slab and $t'$ denotes the fraction transmitted when leaving the slab.
+\begin{figure}[H]
+  \centering 
+  \input{multibeam.tex}
+  \caption{Multibeam Interference from a parallel slab}
+\end{figure}
+\noindent
+Consider the parallel reflected rays, each of which bears a fixed phase relation with the other. These rays are mutually coherent and will interfere when brought to focus at $P$. Suppose that the incident wave is given by $E\tund{0}e^{i\omega t}$, then the optical field at $P$ is given by:
+\begin{align}
+    \begin{split}
+        \widetilde{E}\tund{1r}&=E\tund{0}r e^{i\omega t}\\ 
+         \widetilde{E}\tund{1r}&=E\tund{0}r' t t' e^{i(\omega t-\delta)}\\ 
+          \widetilde{E}\tund{1r}&=E\tund{0}r'^3 tt' e^{i(\omega t-2\delta)}\\ 
+         & \qquad \vdots\\
+           \widetilde{E}\tund{1r}&=E\tund{0}r'^{(2N-3)} tt' e^{i(\omega t-(N-1)\delta)}\\ 
+    \end{split}
+\end{align}
+The total reflected field is equal to the sum of these components, which gives us 
+\begin{align}
+    \begin{split}
+        \widetilde{E}\tund{r} &= \widetilde{E}\tund{1r}+\widetilde{E}\tund{2r}+\ldots+ \widetilde{E}\tund{Nr}\\
+        &=E\tund{0}e^{-i\omega t}\qty[r + r'tt' e^{-i\delta}\qty(1 + r'^2 e^{-i\delta}+\ldots+ \qty(r'^2e^{-i\delta})^{N-2})]
+    \end{split}
+\end{align}
+For $\abs{r'^2}<1$ and $N\to \infty$, the above sum becomes an infinite GP and we obtain,  
+\begin{align}
+    \widetilde{E}\tund{r} = E\tund{0}e^{i\omega t}\qty[r + \frac{r'tt'e^{-i\delta}}{1-r'^2e^{-i\delta}}]
+\end{align}
+We know that $r'= -r$ and $tt'+r^2=1$, from which we get 
+\begin{align}
+     \widetilde{E}\tund{r} = \qty[ \frac{1-e^{-i\delta}}{1-r^2e^{-i\delta}}]E\tund{0}e^{i\omega t}r
+\end{align}
+The reflected flux density at $P$ can be defined as,
+\begin{align}
+    \mathcal{I}\tund{r}^{\text{\tiny P}} = \frac{1}{2}\widetilde{E}\tund{r}\widetilde{E}\tund{r}^* = \frac{1}{2}E\tund{0}^2\frac{2r^2(1-\cos\delta)}{(1+r^4-2r^2\cos\delta)} =  \frac{\mathcal{F}\sin^2\qty(\delta/2)}{1+\mathcal{F}\sin^2\qty(\delta/2)}\mathcal{I}_i
+\end{align}
+where $\mathcal{I}_i$ is the incident flux and $\mathcal{F}=\qty(\frac{2r}{1-r^2})^2$ is defined as the \textit{finesse}. Similarly for transmitted waves we have, 
+\begin{align}
+    \widetilde{E}\tund{t} = E\tund{0}e^{i\omega t}\frac{tt'}{1-r^2e^{-i\delta}} \implies  \mathcal{I}\tund{t}^{\text{\tiny P}} = \frac{1}{1+\mathcal{F}\sin^2(\delta/2)}\mathcal{I}_i
+\end{align}
+From this we can observe that $\mathcal{I}\tund{i} = \mathcal{I}\tund{r}+\mathcal{I}\tund{t}$. Maximum transmission intensity occurs when $\sin(\delta/2)=0\implies \delta\tund{M}=2\pi M$ for integral values of $M$ while minimum intensity occurs when $\sin(\delta/2)=1\implies \delta\tund{m}=(2m+1)\pi$. The maximum and minimum values of intensity are respectively, 
+\begin{align}
+    \mathcal{I}\tund{t}^{\text{\tiny max}} = \mathcal{I}\tund{i} \qquad \qquad \mathcal{I}\tund{t}^{\text{\tiny min}} =\qty(\frac{1-r^2}{1+r^2})^2 \mathcal{I}\tund{i}
+\end{align}
+\subsection{Fabry-P\'erot Interferometer}
+Having seen the basics of multi-beam interference, we introduce the principle behaind our experimental setup.
+\begin{figure}[H]
+  \centering 
+  \input{fb_diag.tex}
+  \caption{Schematic diagram of the Fabry-Perot experimental set-up}
+\end{figure}
