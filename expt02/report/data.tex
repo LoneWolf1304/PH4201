@@ -7,17 +7,17 @@ We set up the apparatus and obtained the interference fringes from the rays on a
 \centering
 \begin{tabular}{ccccc}
 \hline
-$n$ & Left Position (cm) & Right Position (cm) & Radius $R$ (cm) & $R^2$ (cm$^2$) \\ 
+$m$ & Left Position (cm) & Right Position (cm) & Radius $R$ (cm) & $R^2$ (cm$^2$) \\ 
 \hline\hline
-1 & 2.46 & 11.00 & 4.27 & 18.23 \\
-2 & 2.73 & 10.77 & 4.02 & 16.16 \\
-3 & 3.02 & 10.51 & 3.75 & 14.03 \\
-4 & 3.30 & 10.20 & 3.45 & 11.90 \\
+9 & 2.46 & 11.00 & 4.27 & 18.23 \\
+8 & 2.73 & 10.77 & 4.02 & 16.16 \\
+7 & 3.02 & 10.51 & 3.75 & 14.03 \\
+6 & 3.30 & 10.20 & 3.45 & 11.90 \\
 5 & 3.63 & 9.95  & 3.16 & 9.99  \\
-6 & 3.93 & 9.58  & 2.83 & 7.98  \\
-7 & 4.36 & 9.24  & 2.44 & 5.95  \\
-8 & 4.84 & 8.71  & 1.94 & 3.74  \\
-9 & 5.41 & 8.15  & 1.37 & 1.88  \\
+4 & 3.93 & 9.58  & 2.83 & 7.98  \\
+3 & 4.36 & 9.24  & 2.44 & 5.95  \\
+2 & 4.84 & 8.71  & 1.94 & 3.74  \\
+1 & 5.41 & 8.15  & 1.37 & 1.88  \\
 \hline
 \end{tabular}
 \caption{Radius of fringe for distance determination}
@@ -40,7 +40,7 @@ In this part, we used a green laser source of undetermined wavelength. Similar a
 \centering
 \begin{tabular}{ccccc}
 \hline
-$n$ & Right Position (cm) & Left Position (cm) & Radius $R$ (cm) & $R^2$ (cm$^2$) \\
+$m$ & Right Position (cm) & Left Position (cm) & Radius $R$ (cm) & $R^2$ (cm$^2$) \\
 \hline\hline
 1 & 7.97 & 5.64 & 1.17 & 1.36 \\
 2 & 8.58 & 5.06 & 1.76 & 3.10 \\
@@ -65,6 +65,7 @@ $$m= 1.622\pm 0.008$$
 Using the distance $d$ previously obtained, we can estimate the wavelength of the laser source as,
 $$\lambda = \frac{\text{slope}\times d}{D^2} = \frac{1.622\ \text{cm}^2\times 0.143 \ \text{cm}}{(66.2\ \text{cm})^2} =5.293\times 10^{-5}\ \text{cm} = 529.3 \ \text{nm} $$
 \subsection{Finesse Calculation}
+\subsubsection{Using Intensity Distribution}
 For the finesse calculation, we need to analyse the fringes using the \textit{ImageJ} software. One such picture of the fringes was taken using our phone camera and then using ImageJ, we found the distribution profule of the pixel. 
 \begin{figure}[H]
     \centering
@@ -98,5 +99,19 @@ In the distribution data, we used a fitting function,
 \end{equation}
 The first part is the expected distribution for the intensity of transmitted light from Eq. \eqref{trans}. The second part takes care of the Gaussian background of the intensity and $c$ is just to manage some offset.\\[0.2cm]
 The fitting is very sensitive to initial conditions and care needs to be taken so that the initial conditions roughly follow a trend with the original data. The data along with the fit curve is shown in Fig. \ref{fitting}.\\[0.2cm]
-After curve fitting, the coefficient of finesse was found out to be, $\mathcal{F} = 0.169$ from which we obtain the finesse as,
-$$\mathscr{F} = \frac{\pi \sqrt{\mathcal{F}}}{2}= 0.645$$
+After curve fitting, the coefficient of finesse was found out to be, $\mathcal{F} = 0.35\pm 0.06$ from which we obtain the finesse as,
+$$\mathscr{F} = \frac{\pi \sqrt{\mathcal{F}}}{2}= 0.929$$
+\subsubsection{Using Power Meter}
+Using a power meter, we measured the power of the incident, transmitted and reflected beams
+\begin{itemize}
+    \item Power of the incident beam $P\tund{i} = 6.65\ \mathrm{mW}$
+    \item Power of the reflected beam $P\tund{r}=1.42\ \mathrm{mW}$
+    \item Power of the transmitted beam $P\tund{t}=0.75\ \mathrm{mW}$
+\end{itemize}
+Using these data, we can find the reflectance of the mirror as,
+$$R = \frac{P\tund{r}}{P\tund{i}} = \frac{1.42}{6.65} = 0.213$$
+Using the reflectance and Eq. \ref{findef}, we can find the finesse as,
+$$\mathscr{F} = \frac{\pi r}{1-r^2} = \frac{\pi \sqrt{R}}{1-R} = \frac{\pi \times 0.462 }{1-0.213} = 1.842$$
+There is significant deviation between the finesse found out from these two methods. The finesse from the curve fitting is prone to errors since it is heavily dependent on the initial guess conditions and there are so many parameters with which we are fitting. Also, $P\tund{r}+P\tund{t}$ is not exactly equal to $P\tund{i}$ due to some loss, due to which the finesse from the power method is overestimated.
+
+

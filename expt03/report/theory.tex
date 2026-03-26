@@ -1,0 +1,114 @@
+\section{Theory}
+\subsection{Polarization of Light}
+Light is a transverse electromagnetic wave. For a wave travelling in in the $\hat{z}$ direction we have,
+\begin{equation}
+E_x = E_{0x} e^{i(\omega t - kz + \delta_x)}, \quad
+E_y = E_{0y} e^{i(\omega t - kz + \delta_y)}
+\end{equation}
+Depending on the amplitudes and phase difference between the components of the electric field, we define different polarizations viz. linear, circular, or elliptical.
+
+\subsection{Stokes Parameters and Mueller Matrices}
+The complete description of the polarization state is given by the Stokes vector, based on the intensity parameters:
+\begin{equation}\label{stokes}
+S =
+\begin{bmatrix}
+S\tund{0} \\
+S\tund{1} \\
+S\tund{2} \\
+S\tund{3}
+\end{bmatrix}
+=
+\begin{bmatrix}
+I_H + I_V \\
+I_H - I_V \\
+I_P - I_M \\
+I_R - I_L
+\end{bmatrix}
+\end{equation}
+where $S\tund{0}$ is the total intensity of the beam,  $S\tund{1}$ represents the difference of intensities in the horizontal or vertical polarization ($I_H - I_V$), $S\tund{2}$ denotes the difference in intensities between  $+45\degree$ or $-45\degree$ polarization states (($I_P - I_M$)) while $S\tund{3}$ represents the difference in intensities of the circular polarization states ($I_R - I_L$).
+\noindent
+The interaction of polarized light with an optical element can be described by the Mueller matrix $M$:
+\begin{equation}
+S_{\text{out}} = \mathrm{M} S_{\text{in}}\qquad M \equiv
+\begin{bmatrix}
+m_{11} & m_{12} & m_{13} & m_{14} \\
+m_{21} & m_{22} & m_{23} & m_{24} \\
+m_{31} & m_{32} & m_{33} & m_{34} \\
+m_{41} & m_{42} & m_{43} & m_{44}
+\end{bmatrix}
+\end{equation}
+where $S_{\text{in}}$ and $S_{\text{out}}$ are the input and output Stokes vectors.
+\subsubsection{Mueller Matrix of a Linear Retarder}
+An important property of an optical medium is \textit{retardance}, which arises due to the difference in the refractive index of two orthogonal polarization states and results in a phase difference. For a linear retarder with retardance $\delta$ and fast axis at angle $\theta$:
+
+\begin{equation}
+M_{\text{lin}} =
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos^2 2\theta + \cos\delta \sin^2 2\theta & (1-\cos\delta)\sin 2\theta \cos 2\theta & -\sin\delta \sin 2\theta \\
+0 & (1-\cos\delta)\sin 2\theta \cos 2\theta & \sin^2 2\theta + \cos\delta \cos^2 2\theta & \sin\delta \cos 2\theta \\
+0 & \sin\delta \sin 2\theta & -\sin\delta \cos 2\theta & \cos\delta
+\end{bmatrix}
+\end{equation}
+
+\subsubsection{Mueller Matrix of a Circular Retarder (Optical Rotator)}
+For optical rotation by an angle $\psi$, the Mueller matrix becomes:
+\begin{equation}
+M_{\text{circ}} =
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos 2\psi & \sin 2\psi & 0 \\
+0 & -\sin 2\psi & \cos 2\psi & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\end{equation}
+
+\subsubsection{Mueller Matrix of SLM}
+Spatial Light Modulator is a optoelectronic device, containing twisted layers of liquid crystals and is used to modulate the magnitude or phase of a beam of light. Electric field can be applied to tilt these crystals to produce the intended effect. SLM behaves as a combination of a linear retarder and an optical rotator:
+\begin{equation}
+M_{\text{SLM}} = M_{\text{circ}} \cdot M_{\text{lin}}
+\end{equation}
+Thus, the SLM introduces both retardance ($\delta$) and optical rotation ($\psi$), which are determined experimentally using Stokes measurements. For horizontal incident light, the output Stokes vector is, 
+\begin{equation}
+    S\tund{1} = \mqty[1 \\ \cos 2\theta \cos(2\theta-2\psi)+\sin 2\theta\cos\delta \sin(2\theta-2\psi)\\ \sin 2\theta \cos(2\theta-2\psi)-\cos 2\theta\cos\delta \sin(2\theta-2\psi)\\ \sin(2\theta-2\psi)]
+\end{equation}
+For the $+45\degree$ polarization, the output Stokes vector is given by, 
+\begin{equation}
+    S\tund{2} = \mqty[1 \\ \cos 2\theta \sin(2\theta-2\psi)-\sin 2\theta\cos\delta \cos(2\theta-2\psi)\\ \sin 2\theta \sin(2\theta-2\psi)+\cos 2\theta\cos\delta \cos(2\theta-2\psi)\\ -\cos(2\theta-2\psi)\sin \delta]
+\end{equation}
+From this we calculate the linear retardance $\delta$ and the rotation $\psi$ of an SLM by,
+\begin{align}
+   \begin{split}
+     [S\tund{1}]_2+[S\tund{2}]_3 = (1+\cos \delta)\cos 2\psi=X\\
+     [S\tund{1}]_3-[S\tund{2}]_2= (1+\cos \delta)\sin 2\psi=Y
+   \end{split}
+\end{align}
+where $[S\tund{i}]_j $ is the $j^{\text{th}}$ component of $S\tund{i}$ vector. Simplifying this gives us, 
+\begin{align}
+    \delta = \cos^{-1}\qty[\sqrt{X^2+Y^2}-1] \qquad \psi = \tan^{-1}\qty(\frac{Y}{X})
+\end{align}
+\section{Brewster's Angle}
+To determine the polarization axis of the given polarizer, we need to use the concept of Brewster's angle, which is the angle of incidence at which light of a particular polarization will transmit fully through a dielectric surface. If unpolarized light is incident, it becomes polarized after reflection from the surface.
+\begin{figure}[H]
+    \centering
+    \input{brewster.tex}
+\end{figure}
+\noindent
+If light is going from a medium with refective index $n\tund{1}$ to a medium of refractive index $n\tund{2}$ then Brewster's angle is given by, 
+\begin{equation}
+    \theta\tund{B} = \tan^{-1}\qty(\frac{n\tund{1}}{n\tund{2}})
+\end{equation}
+The experiment consists of two parts, first we determine the polarisation axis of the two polarizers using Brewster's angle.
+\begin{figure}[H]
+    \centering 
+    \input{setup.tex}
+    \caption{Schematic of the Experimental Setup}
+\end{figure}
+\noindent
+In the second part, we find the intensities for different grayscale values of the SLM and try to reconstitute the Stokes vector. 
+\begin{figure}[H]
+    \centering 
+ \includegraphics[width=0.5\textwidth]{setup.jpeg}
+    \caption{Actual Experimental Setup}
+\end{figure}
+

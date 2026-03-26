@@ -1,0 +1,44 @@
+\section{Error Analysis}
+\subsection{Random Error}
+We analyze the errors introduced in the results. The Stokes' vectors were defined in Eq. \ref{stokes}. Using this, the uncertainty in the second component of the Stokes vector becomes, 
+\begin{equation}
+    \Delta [S]_2 = \abs{\frac{2I_V}{(I_H+I_V)^2}}\Delta I+\abs{\frac{2I_H}{(I_H+I_V)^2}}\Delta I = {\frac{2\Delta I}{(I_H+I_V)}}
+\end{equation}
+Simularly, for the third component we have the uncertainty 
+\begin{equation}
+    \Delta [S]_3 =  = {\frac{2\Delta I}{(I_H+I_V)}} +{\frac{2\abs{I_P-I_M}\Delta I}{(I_H+I_V)^2}} 
+\end{equation}
+Since $X$ and $Y$ are linearly related to these components, we get the uncertainty in $X$ and $Y$ just by adding these uncertainities. From that, we obtain the uncertainty in $\psi$ and $\delta$. 
+\begin{align*}
+    \psi = \frac{1}{2}\tan^{-1}\qty(\frac{Y}{X}) \implies \pdv{\psi}{X} = -\frac{Y}{2(X^2+Y^2)}\quad \pdv{\psi}{Y} = \frac{X}{2(X^2+Y^2)}\implies \Delta \psi = -\frac{|Y|\Delta X}{2(X^2+Y^2)} +  \frac{|X|\Delta Y}{2(X^2+Y^2)}
+\end{align*}
+Similarly, if we do this for the linear retardance we get, 
+\begin{align*}
+    \delta =\cos^{-1}\qty(\sqrt{X^2+Y^2}-1)\implies \Delta \delta  = \frac{|X|\Delta X + |Y|\Delta Y}{\sqrt{X^2+Y^2}\sqrt{1 - (\sqrt{X^2+Y^2}-1)^2}}
+\end{align*}
+The least count of the photodetector was $0.1\ \mu A$ which implies $\Delta I =0.1\ \mu A$. Using these formula above, we get the maximum possible errors for each greyscale value as, 
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c}
+ Grayscale & $\Delta\psi$  (rad.) & $\Delta \delta$ (rad.) \\
+\hline
+0 & $0.016$ 
+  & $0.036$ \\
+\hline
+64 & $0.054$ 
+  & $0.098$ \\
+\hline
+128 & $0.02$ 
+  & $0.163$ \\
+\hline
+255 & $0.026$ 
+  & $0.09$ \\
+\end{tabular}
+\end{table}
+\subsection{Sources of Error}
+\begin{itemize}
+  \item The laser was not stable at all times which could have led to fluctuations in the measured internsity.
+  \item The polarizers were not perfect, hence there was always some residual component from the unintended polarization states which could have introduced errors.
+  \item The SLM crystals might have some spatial non-uniformity which could have caused error in measurement. 
+  \item The variation in external temperature could have affected the SLM crystals, leading to some error. 
+\end{itemize}

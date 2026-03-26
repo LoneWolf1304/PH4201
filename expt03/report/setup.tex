@@ -1,0 +1,76 @@
+
+
+% Gradient Info
+  
+\tikzset {_bfsmqoecl/.code = {\pgfsetadditionalshadetransform{ \pgftransformshift{\pgfpoint{0 bp } { 0 bp }  }  \pgftransformrotate{0 }  \pgftransformscale{2 }  }}}
+\pgfdeclarehorizontalshading{_edhldii6a}{150bp}{rgb(0bp)=(0.88,1,1);
+rgb(37.5bp)=(0.88,1,1);
+rgb(39.25bp)=(0.88,1,1);
+rgb(40.5bp)=(0.99,1,1);
+rgb(45bp)=(0.9,0.97,0.99);
+rgb(51bp)=(0.78,0.93,0.98);
+rgb(56.25bp)=(0.75,0.89,0.97);
+rgb(62.5bp)=(0.69,0.85,0.96);
+rgb(100bp)=(0.69,0.85,0.96)}
+
+% Pattern Info
+ 
+\tikzset{
+pattern size/.store in=\mcSize, 
+pattern size = 5pt,
+pattern thickness/.store in=\mcThickness, 
+pattern thickness = 0.3pt,
+pattern radius/.store in=\mcRadius, 
+pattern radius = 1pt}
+\makeatletter
+\pgfutil@ifundefined{pgf@pattern@name@_zk9c4qp4q}{
+\pgfdeclarepatternformonly[\mcThickness,\mcSize]{_zk9c4qp4q}
+{\pgfqpoint{0pt}{0pt}}
+{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+{\pgfpoint{\mcSize}{\mcSize}}
+{
+\pgfsetcolor{\tikz@pattern@color}
+\pgfsetlinewidth{\mcThickness}
+\pgfpathmoveto{\pgfqpoint{0pt}{0pt}}
+\pgfpathlineto{\pgfpoint{\mcSize+\mcThickness}{\mcSize+\mcThickness}}
+\pgfusepath{stroke}
+}}
+\makeatother
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,214); %set diagram left start at 0, and has height of 214
+
+%Shape: Square [id:dp3600650713538579] 
+\draw  [fill={rgb, 255:red, 192; green, 247; blue, 136 }  ,fill opacity=1 ] (104,138) -- (128,138) -- (128,162) -- (104,162) -- cycle ;
+%Flowchart: Terminator [id:dp7824235036188806] 
+\path  [shading=_edhldii6a,_bfsmqoecl] (248,170.75) -- (248,131.43) .. controls (248,126.32) and (250.91,122.18) .. (254.5,122.18) .. controls (258.09,122.18) and (261,126.32) .. (261,131.43) -- (261,170.75) .. controls (261,175.86) and (258.09,180) .. (254.5,180) .. controls (250.91,180) and (248,175.86) .. (248,170.75) -- cycle ; % for fading 
+ \draw   (248,170.75) -- (248,131.43) .. controls (248,126.32) and (250.91,122.18) .. (254.5,122.18) .. controls (258.09,122.18) and (261,126.32) .. (261,131.43) -- (261,170.75) .. controls (261,175.86) and (258.09,180) .. (254.5,180) .. controls (250.91,180) and (248,175.86) .. (248,170.75) -- cycle ; % for border 
+
+%Shape: Ellipse [id:dp005570376497502472] 
+\draw  [fill={rgb, 255:red, 247; green, 237; blue, 157 }  ,fill opacity=1 ] (335,173) .. controls (329.48,173) and (325,163.07) .. (325,150.82) .. controls (325,138.57) and (329.48,128.63) .. (335,128.63) .. controls (340.52,128.63) and (345,138.57) .. (345,150.82) .. controls (345,163.07) and (340.52,173) .. (335,173) -- cycle ;
+%Shape: Ellipse [id:dp055503989269594545] 
+\draw  [fill={rgb, 255:red, 247; green, 237; blue, 157 }  ,fill opacity=1 ] (174,174) .. controls (168.48,174) and (164,164.07) .. (164,151.82) .. controls (164,139.57) and (168.48,129.63) .. (174,129.63) .. controls (179.52,129.63) and (184,139.57) .. (184,151.82) .. controls (184,164.07) and (179.52,174) .. (174,174) -- cycle ;
+%Straight Lines [id:da9916632038936388] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (84,150.25) -- (380,150.18) ;
+\draw [shift={(382,150.18)}, rotate = 179.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (6.56,-1.97) .. controls (4.17,-0.84) and (1.99,-0.18) .. (0,0) .. controls (1.99,0.18) and (4.17,0.84) .. (6.56,1.97)   ;
+%Shape: Rectangle [id:dp39309038535119234] 
+\draw  [pattern=_zk9c4qp4q,pattern size=6pt,pattern thickness=0.75pt,pattern radius=0pt, pattern color={rgb, 255:red, 0; green, 0; blue, 0}] (386,115) -- (393,115) -- (393,174.18) -- (386,174.18) -- cycle ;
+%Shape: Path Data [id:dp5639191877078651] 
+\draw  [fill={rgb, 255:red, 255; green, 34; blue, 34 }  ,fill opacity=1 ] (47,155.78) -- (47,144.73) -- (74.91,144.73) -- (84,150.25) -- (74.91,155.78) -- (47,155.78) -- cycle ;
+
+% Text Node
+\draw (50,125) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {Laser};
+% Text Node
+\draw (147,110) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {Polarizer $\displaystyle P_{1}$};
+% Text Node
+\draw (242,109) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {SLM};
+% Text Node
+\draw (302,109) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {Polarizer $\displaystyle P_{2}$};
+% Text Node
+\draw (396,164.18) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize,rotate=-270] [align=left] {Detector};
+% Text Node
+\draw (92,110) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {ND Filter};
+
+
+\end{tikzpicture}

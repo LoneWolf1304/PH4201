@@ -223,7 +223,7 @@ a4paper]{geometry}
 \end{itemize}
 \section{Apparatus}
 The required apparatus for performing the experiment are:
-\begin{multicols}{2}
+\begin{multicols}{3}
 \begin{enumerate}
   \item Laser source
   \item Fabry-Perot etalon 
@@ -237,7 +237,21 @@ The required apparatus for performing the experiment are:
 \input{theory.tex}
 \input{data.tex}
 \section{Error Analysis}
+\subsection{Random Error}
+From Eq. \eqref{radius}, we have for a fixed $\lambda = 655 \ \text{nm}$,
+$$\frac{\delta d}{d} =  \frac{\delta (\text{slope})}{\text{slope}}+2\frac{\delta D}{D}=2 \frac{0.008}{2.007}+ 2\frac{0.1}{66.2} =0.007 \implies \delta d = 0.143\times 0.007 \ \text{cm} = 0.001 \ \text{cm}$$
+Hence, the reported value of $d$ is $(0.143\pm 0.001) \ \text{cm}$. For the second part, using $\lambda$ as our quantity of interest, 
+$$\frac{\delta \lambda}{\lambda} = \frac{\delta (\text{slope})}{\text{slope}}+2\frac{\delta D}{D}+\frac{\delta d}{d} = 2 \frac{0.008}{1.622}+ 2\frac{0.1}{66.2}+\frac{0.001}{0.143} =0.015\implies \delta \lambda = 0.015\times 529.3 \ \text{nm} = 7.93\ \text{nm}$$
+The reported value of the wavelength of the unknown light is $\lambda = (529.3 \pm 7.93)\ \text{nm}$
+\subsection{Sources of Error}
+\begin{itemize}
+    \item The accuracy of finesse measurement by curve fitting depends on the quality of the captured fringe image. This could lead to error since the photo was taken by our phone camera which is of lower quality.
+    \item The fringes were prone to vibrations and were not very stable, which could have lead to an error during radius measurement.
+\end{itemize}
 \section{Discussion and Conclusion}
+We used the Fabry-P\'erot Interferometer to obtain interference fringes using two paralle mirrors. The fringe pattern was very unstable and prone to vibrations and loss of coherence. If the alignment of the optical elements are incorrect, multiple laser spots may appear on the screen instead of a single interference pattern.
+The laser was aligned slightly off-axis to ensure that the reflection from the mirror missed the laser aperture, thereby preventing feedback that could cause power fluctuations.\\[0.2cm]
+By measuring the radius of the fringes, we found out the distance between the two plates of the etalon as $d=(0.143 \pm 0.001) \ \text{cm}$. Using this distance, we found out the wavelength of the unknown laser source as $\lambda = (529.3 \pm 7.93)\ \text{nm}$. We also calculated the finesse of the fringes through two methods, first using curve fitting from where we got $\mathscr{F} = 0.929$ and then using a power meter, from where we obtained $\mathscr{F} = 1.842$.
 \end{document}
 
 
