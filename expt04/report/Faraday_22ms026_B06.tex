@@ -203,8 +203,8 @@ a4paper]{geometry}
         \begin{center}
             {\rmfamily
                 \Large{\textcolor{blue!30!black}{%
-                    \textmd{{\Large{{F}}}}abry-\textmd{{\Large{{P}}}}\'erot \textmd{{\Large{{I}}}}nterferometry  \\
-                     {\Large Experiment} 03%
+                    \textmd{{\Large{{M}}}}agneto-\textmd{{\Large{{O}}}}ptics \textmd{{\Large{{U}}}}sing Faraday Effect  \\
+                     {\Large Experiment} 04%
                 }}\\[0.4cm]
             }
             \end{center}
@@ -217,20 +217,17 @@ a4paper]{geometry}
 \vspace{0.6cm}
 \section{Aim}
 \begin{itemize}
-  \item To measure the distance between the plates of a Fabry-P\'erot etalon
-  \item To measure wavelength of unknown laser source using the distance between plates
-  \item To estimate the finesse of a fringe pattern.
+  \item To estimate Verdet constant and check how rotation angle of the polarisation plane is changed by the magnetic flux.
+  \item To verify Malus' law for the relation between .
 \end{itemize}
 \section{Apparatus}
 The required apparatus for performing the experiment are:
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
   \item Laser source
-  \item Fabry-Perot etalon 
-  \item Power meter 
-  \item Focusing lens
-  \item Screen
-  \item Optical table
+  \item Electromagnet
+  \item Polarisers
+  \item Photodiode detector
 \end{enumerate}
 \end{multicols}
 
@@ -238,20 +235,38 @@ The required apparatus for performing the experiment are:
 \input{data.tex}
 \section{Error Analysis}
 \subsection{Random Error}
-From Eq. \eqref{radius}, we have for a fixed $\lambda = 655 \ \text{nm}$,
-$$\frac{\delta d}{d} =  \frac{\delta (\text{slope})}{\text{slope}}+2\frac{\delta D}{D}=2 \frac{0.008}{2.007}+ 2\frac{0.1}{66.2} =0.007 \implies \delta d = 0.143\times 0.007 \ \text{cm} = 0.001 \ \text{cm}$$
-Hence, the reported value of $d$ is $(0.143\pm 0.001) \ \text{cm}$. For the second part, using $\lambda$ as our quantity of interest, 
-$$\frac{\delta \lambda}{\lambda} = \frac{\delta (\text{slope})}{\text{slope}}+2\frac{\delta D}{D}+\frac{\delta d}{d} = 2 \frac{0.008}{1.622}+ 2\frac{0.1}{66.2}+\frac{0.001}{0.143} =0.015\implies \delta \lambda = 0.015\times 529.3 \ \text{nm} = 7.93\ \text{nm}$$
-The reported value of the wavelength of the unknown light is $\lambda = (529.3 \pm 7.93)\ \text{nm}$
+From the formula of the Verdet constant, we get:
+\begin{align}
+  \frac{\Delta V}{V}=  \frac{\Delta \theta}{\theta}  + \frac{\Delta B}{B} = \frac{\Delta \theta}{\theta}  + \frac{\Delta I}{I} 
+\end{align}
+The least count of the current is $0.1\ \text{A}$, while that of the angle measurement in the polariser is $0.1\degree \equiv 6'$. We take the first data point $I= 0.25 \ \text{A}$ and $\theta = 30'$ and $V = 0.02286$ we get 
+\begin{align*}
+  \Delta V = 0.02286\qty(\frac{6}{30}+ \frac{0.001}{0.25}) = 0.0055
+\end{align*}
+Hence, we can write the Verdet constant as $V = (0.02571 \pm 0.0055)\  \text{min/Oe/cm}$. We can also calculate the accuracy of the experiment on Malu's law. The deviation in the experimentally derived slope from the theoretical value is, $$\text{Error} = \frac{\abs{2-2.032}}{2} \times 100 \ \% \approx 1.6 \% $$
 \subsection{Sources of Error}
-\begin{itemize}
-    \item The accuracy of finesse measurement by curve fitting depends on the quality of the captured fringe image. This could lead to error since the photo was taken by our phone camera which is of lower quality.
-    \item The fringes were prone to vibrations and were not very stable, which could have lead to an error during radius measurement.
-\end{itemize}
+
+Sources of error for this experiment can be:
+
+\begin{enumerate}
+    \item \textbf{Non-uniform Magnetic Field:} The experiment assumes that the magnetic field is uniform throughout the material. In reality, it is not perfectly uniform, which introduces error in the measurements.
+
+    \item \textbf{Non-monochromatic Light:} If the light is not monochromatic, different frequency components experience different rotations (due to different responses of RCP and LCP modes). Hence, the incident light should ideally be monochromatic.
+
+    \item \textbf{Thermal Fluctuation:} The Verdet constant and material properties can be temperature dependent. Thermal fluctuations can therefore lead to experimental errors.
+
+    \item \textbf{Alignment Issue:} If the laser is not properly aligned to pass horizontally through the medium, some intensity may be lost. This can lead to incorrect readings in the photodetector.
+
+    \item \textbf{Imperfect Polariser:} If the polarisers are not ideal, the light may not be perfectly polarised. This introduces noise and affects the accuracy of angle measurements.
+\end{enumerate}
 \section{Discussion and Conclusion}
-We used the Fabry-P\'erot Interferometer to obtain interference fringes using two paralle mirrors. The fringe pattern was very unstable and prone to vibrations and loss of coherence. If the alignment of the optical elements are incorrect, multiple laser spots may appear on the screen instead of a single interference pattern.
-The laser was aligned slightly off-axis to ensure that the reflection from the mirror missed the laser aperture, thereby preventing feedback that could cause power fluctuations.\\[0.2cm]
-By measuring the radius of the fringes, we found out the distance between the two plates of the etalon as $d=(0.143 \pm 0.001) \ \text{cm}$. Using this distance, we found out the wavelength of the unknown laser source as $\lambda = (529.3 \pm 7.93)\ \text{nm}$. We also calculated the finesse of the fringes through two methods, first using curve fitting from where we got $\mathscr{F} = 0.929$ and then using a power meter, from where we obtained $\mathscr{F} = 1.842$.
+In this experiment, we investigated the Faraday effect in flint glass and verified Malus' law through intensity measurements. It was observed that the angle of rotation of the plane of polarisation increases linearly with the applied magnetic field, as expected theoretically. The Verdet constant was experimentally determined to be
+\[
+V = (0.0257 \pm 0.0055) \ \text{min/Oe/cm},
+\]
+which is consistent across the measured range of currents.\\[0.2cm]
+In the second part, the variation of transmitted intensity with current was studied. The log-log analysis showed a power-law dependence with exponent $2.032 \pm 0.008$, confirming the quadratic relationship predicted by Malus' law under small-angle approximation.\\[0.2cm]
+Thus, the experiment successfully validates both the linear dependence of Faraday rotation on magnetic field and the quadratic dependence of transmitted intensity on the rotation angle.
 \end{document}
 
 

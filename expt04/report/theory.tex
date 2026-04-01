@@ -1,0 +1,57 @@
+\section{Theory}
+The experiment is based on the opto-magnetic property, demonstrating Faraday effect which states that isotropic media become optically active when a magnetic field is applied in the propagation direction of the light. A linearly polarised light propagating along the $x$ direction can be expressed as a superposition of left and right circularly polarised components.
+\begin{equation}
+    \vb{E}(x,t) = \vb{E}\tund{r}(x,t) + \vb{E}\tund{l}(x,t)
+\end{equation}
+where $\vb{E}\tund{r}$ and $\vb{E}\tund{l}$ denote the left and right circular components. Written explicitly we have, 
+\begin{align}
+    \begin{split}
+         \vb{E}\tund{r}(x,t) &= \qty(0, \frac{A}{2}\cos \qty[\omega\qty(t-n\tund{r}x/c)], \frac{A}{2}\sin \qty[\omega\qty(t-n\tund{r}x/c)])^\top\\
+    \vb{E}\tund{l}(x,t) &= \qty(0, \frac{A}{2}\cos \qty[\omega\qty(t-n\tund{r}x/c)], -\frac{A}{2}\sin \qty[\omega\qty(t-n\tund{r}x/c)])^\top
+    \end{split}
+\end{align}
+where $n\tund{r}$ and $n\tund{l}$ are the different refractive indices for the RCP and LCP components. Let us choose $x=D$, and using the above relation we will obtain: 
+\begin{align}
+    \psi= \tan^{-1}\qty(\frac{E\tund{z}}{E\tund{y}}) = \frac{\omega}{2c}(n\tund{l}-n\tund{r})D\implies \psi = (n\tund{l}-n\tund{r}) \frac{\pi D}{\lambda}
+\end{align}
+This shows that the difference in the refractive indices can rotate the linearly polarised light. Now, we show that the introduction of a magnetic field will change the refractive index for the two polarisation components using Becquerel's theory.\\[0.2cm] Consider a material containing particles of mass $m$ and charge $q$, embedded in an opposite charge distribution. The system can be modelled as the masses being contrained by springs and vibrating about fixed sites. Considering magnetic field along the $x$ axis and a plane RCP rotating clockwise with respect to the field, the equation of motion can be written as, 
+\begin{equation}
+    -m\omega^2 r\tund{rcp} = -kr + Eq +Bq\omega r \implies r = \frac{Eq/m}{(\omega\tund{0}^2 - \omega^2-Bq\omega)}
+\end{equation}
+where $\omega\tund{0}^2 = \qty(\frac{k}{m})^{1/2}$ to be the natural frequency. Similarly, for the left circularly polarised light we can find, 
+\begin{equation}
+    r\tund{lcp} = \frac{Eq/m}{(\omega\tund{0}^2 -\omega^2+Bq\omega)}
+\end{equation}
+\begin{figure}[H]
+    \centering
+\input{becquerel.tex}
+\end{figure}
+\noindent
+The displacement of the charge creates a dipole moment $qr$. Suppose there are $N$ dipoles per volume in the system. Then the polarisation per volume is given by $P=Nqr$. Considering linear polarisation, $P = \varepsilon\tund{0}\chi\tund{e}E$ where $ \varepsilon\tund{0}$ is the permittivity of the free space and $\chi\tund{e}$ is the electric susceptibility. Now, the relative permittivity is, $\varepsilon\tund{r} = \chi\tund{e}+1 = 1+\frac{P}{\chi\tund{0}E}$. From the value of the relative permittivity $n=\sqrt{\varepsilon\tund{r}\mu\tund{r}}$. Taking $\mu\tund{r} =1$,  we get:
+\begin{align}
+    \begin{split}
+        n\tund{r}(\omega) &= \qty[1+\frac{Nq^2}{m\qty(\omega\tund{0}^2 -\omega^2-\frac{Bq\omega}{m})}]^{1/2}\\
+    n\tund{l}(\omega) &= \qty[1+\frac{Nq^2}{m\qty(\omega\tund{0}^2 -\omega^2+\frac{Bq\omega}{m})}]^{1/2}
+    \end{split}
+\end{align}
+\noindent
+Considering the approximation, $\omega^2 + \frac{Bq\omega}{m} = (\omega + \Delta \omega\tund{r})^2$ and $\omega^2 -\frac{Bq\omega}{m}= (\omega+\Delta \omega\tund{l})^2$ where $\Delta \omega\tund{r} = -\Delta \omega\tund{l}= \frac{Bq}{2m}$ is considered to be small, we get:
+\begin{align}
+    n\tund{l} - n\tund{r} = \dv{n}{\omega}\cdot (\Delta \omega\tund{l} -\Delta \omega\tund{r} ) = \dv{n}{\lambda}\cdot \dv{\lambda}{\omega} \cdot \qty(-\frac{Bq}{m})= \dv{n}{\lambda}\cdot \qty(\frac{\lambda^2}{2\pi c})\cdot \qty(\frac{Bq}{m})
+\end{align}
+This implies that the optical rotation can be written, $\Psi =  VDB$ where $V$ is the Verdet constant, 
+\begin{align}
+    V = \dv{n}{\lambda}\cdot \frac{\lambda}{2c}\cdot \frac{q}{m}
+\end{align}
+The figure below shows the setup which we used for our experiments, along with all the optical elements.
+\begin{figure}[H]
+    \centering
+\input{figure.tex}
+\caption{Schematic of the Experimental Setup}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{setup.jpeg}
+    \caption{Actual experimental setup}
+\end{figure}
+We also verify Malu's law, which states $\mathcal{I} = \mathcal{I}\tund{0}\cos^2(\Psi)$ and $\Psi$ is proportional to the current $I$. For small values of optical rotation, we have a quadratic relation between intensity and current, $\mathcal{I} \sim I^2$.
